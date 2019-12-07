@@ -3,7 +3,121 @@
 @import "fonts";
 
 
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+};
 
+h1, h2 {
+    font-weight: 700;
+}
+
+p,a {
+    font-family: 'Raleway', sans-serif;
+}
+
+.column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-center {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.vh-50 {
+    height: 50vh;
+}
+
+#about-us-slider {
+    height: 500px !important;
+    img {
+        height: 500px !important;
+    }
+}
+
+@media screen and(max-height: 500px) {
+    #about-us-slider {
+        height: 100vh !important;
+        img {
+            height: 100vh !important;
+        }
+    }
+}
+
+.project-gallery {
+    .project-gallery__elem-wrap {
+        height: 450px;
+        padding: 15px;
+    }
+    .project-gallery__elem {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        
+        .project-gallery__img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            filter: brightness(50%);
+        }
+        .project-gallery__description, .project-gallery__content {
+            position: absolute;
+            padding: 35px;
+            top: 0;
+            left:0;
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 1;
+        }
+        .project-gallery__description {
+            justify-content: flex-end;
+        }
+
+        .project-gallery__content {
+            display: none;
+            justify-content: space-between;
+            background-color: #71f5ea;
+        }
+        .project-gallery__more-text-btn {
+            padding: 0;
+            background-color: rgba(0,0,0,0);
+            outline: none;
+            border:none;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            color: #fff;
+            &::after {
+                margin: .5rem;
+                font-size: 1.2rem;
+                content:"➜";
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &.active {
+            .project-gallery__description {
+                display: none;
+            }
+            .project-gallery__content {
+                display: flex;
+            }
+        }
+    }
+    
+    
+}
 
 
 @import "media";
